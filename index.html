@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>José Ignacio & Emily · Nuestra Boda</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PALETA — Salvia / Lavanda / Marfil
+   ================================================================= */
+:root{
+  --sage:      #80968B;
+  --sage-soft: #94A89C;
+  --sage-dark: #5F7468;
+  --lav:       #B09FC4;
+  --lav-dark:  #8773A0;
+  --ivory:     #F6F7EC;
+  --ivory-2:   #FBFBF5;
+  --tinta:     #454152;
+  --tinta-2:   #857F90;
+  --linea:     #D5D8C6;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Cormorant Garamond', Georgia, serif;
+  color:var(--tinta);
+  background:var(--ivory);
+  line-height:1.55;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+.wrap{ max-width:520px; margin:0 auto; background:var(--ivory); }
+
+.eyebrow{
+  font-family:'Montserrat', sans-serif; font-weight:300;
+  text-transform:uppercase; letter-spacing:.35em;
+  font-size:.72rem; color:var(--tinta-2);
+}
+.serif-name{ font-family:'Cormorant Garamond', serif; font-weight:300; letter-spacing:.18em; line-height:1.1; }
+
+section{ padding:64px 28px; position:relative; }
+.center{ text-align:center; }
+.divider{ width:46px; height:1px; background:var(--sage); margin:22px auto; border:0; opacity:.8; }
+
+/* 1) PORTADA */
+.cover{
+  background:radial-gradient(120% 80% at 50% -10%, var(--sage-soft), var(--sage) 58%, var(--sage-dark) 100%);
+  color:var(--ivory);
+  min-height:100vh; min-height:100svh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:48px 28px;
+}
+.cover .eyebrow{ color:rgba(246,247,236,.78); }
+.monogram{
+  font-family:'Cormorant Garamond', serif; font-weight:300;
+  font-size:8.5rem; line-height:.9; letter-spacing:-.04em;
+  color:#EDF0E2;
+  text-shadow:0 1px 0 rgba(255,255,255,.30), 0 -1px 0 rgba(0,0,0,.16);
+  margin-bottom:6px;
+}
+.wax{
+  width:96px; height:96px; border-radius:50%; margin:30px auto 0;
+  background:radial-gradient(60% 60% at 38% 32%, #C7B6D8, var(--lav) 52%, var(--lav-dark) 100%);
+  box-shadow:inset 0 3px 6px rgba(255,255,255,.40), inset 0 -5px 10px rgba(0,0,0,.22), 0 8px 18px rgba(0,0,0,.22);
+  display:flex; align-items:center; justify-content:center;
+}
+.wax svg{ width:54px; height:54px; opacity:.9; }
+.wax svg path{ stroke:#5A4A6E; stroke-width:1.4; fill:none; stroke-linecap:round; }
+.cover .names{ font-size:1.9rem; margin-top:34px; }
+.cover .amp{ display:block; font-size:1.2rem; color:#E7DEF1; margin:4px 0; font-style:italic; }
+.cover .date-top{ margin-top:22px; font-size:1.05rem; letter-spacing:.12em; }
+.scroll-hint{
+  position:absolute; bottom:26px; left:0; right:0;
+  font-family:'Montserrat',sans-serif; font-weight:300;
+  font-size:.62rem; letter-spacing:.3em; text-transform:uppercase;
+  color:rgba(246,247,236,.7); animation:bob 2.4s ease-in-out infinite;
+}
+@keyframes bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+/* 2) MÚSICA */
+.music{ background:var(--ivory-2); }
+.player{ display:flex; align-items:center; justify-content:center; margin-top:26px; }
+.play-btn{
+  width:66px; height:66px; border-radius:50%;
+  border:1px solid var(--sage); background:var(--ivory-2); color:var(--sage-dark);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:transform .15s ease, background .2s ease;
+  box-shadow:0 4px 14px rgba(95,116,104,.18);
+}
+.play-btn:hover{ transform:scale(1.06); }
+.play-btn:active{ transform:scale(.96); }
+.play-btn.playing{ background:var(--sage); color:#fff; }
+.play-btn svg{ width:24px; height:24px; }
+.song-title{ font-style:italic; color:var(--tinta-2); margin-top:18px; font-size:1.05rem; }
+
+/* 3) FAMILIAS + NOMBRES */
+.intro{ background:var(--ivory-2); }
+.fam{ margin:4px 0; font-size:1.18rem; color:var(--tinta); }
+.fam .label{ font-family:'Montserrat',sans-serif; font-weight:400; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--tinta-2); display:block; margin-top:16px; margin-bottom:2px; }
+.invite-line{ font-style:italic; color:var(--tinta-2); max-width:320px; margin:20px auto 0; font-size:1.08rem; }
+.big-names{ font-size:2.9rem; margin:30px 0 6px; }
+.big-names .amp{ color:var(--lav-dark); font-style:italic; font-size:1.6rem; display:block; margin:6px 0; }
+.verse{ font-style:italic; color:var(--tinta-2); max-width:340px; margin:24px auto 0; font-size:1.05rem; }
+.verse cite{ display:block; font-style:normal; font-size:.8rem; letter-spacing:.1em; margin-top:10px; color:var(--sage-dark); }
+
+/* 4) EVENTO */
+.event{ background:var(--ivory); }
+.date-row{ display:flex; align-items:center; justify-content:center; gap:18px; margin:18px 0 10px; }
+.date-row .side{ font-family:'Montserrat',sans-serif; font-weight:300; font-size:.8rem; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta-2); }
+.date-row .day{ font-size:4.2rem; font-weight:300; line-height:1; }
+.date-line{ width:1px; height:46px; background:var(--linea); }
+.month{ font-family:'Montserrat',sans-serif; font-weight:300; letter-spacing:.4em; text-transform:uppercase; font-size:.8rem; color:var(--tinta-2); }
+.venue{ font-size:1.5rem; font-weight:400; margin-top:14px; letter-spacing:.02em; }
+.venue-type{ color:var(--tinta-2); font-size:1.05rem; margin-top:4px; font-family:'Montserrat',sans-serif; font-weight:300; letter-spacing:.16em; text-transform:uppercase; font-size:.72rem; }
+.btn{
+  display:inline-block; font-family:'Montserrat',sans-serif; font-weight:400;
+  text-transform:uppercase; letter-spacing:.18em; font-size:.72rem;
+  color:var(--sage-dark); text-decoration:none;
+  border:1px solid var(--sage); border-radius:40px; padding:13px 30px; margin-top:18px;
+  transition:background .2s ease, color .2s ease; cursor:pointer; background:transparent;
+}
+.btn:hover{ background:var(--sage); color:#fff; }
+.note-sm{ color:var(--tinta-2); font-size:.95rem; margin-top:16px; }
+
+/* 5) CONTADOR */
+.countdown{ background:var(--ivory-2); }
+.cd-title{ font-size:2.4rem; letter-spacing:.12em; margin-bottom:4px; }
+.cd-grid{ display:flex; justify-content:center; gap:6px; margin-top:30px; }
+.cd-cell{ flex:1; max-width:84px; }
+.cd-num{ font-size:2.9rem; font-weight:300; color:var(--tinta); font-variant-numeric:tabular-nums; line-height:1; }
+.cd-colon{ font-size:2.4rem; color:var(--linea); align-self:flex-start; margin-top:4px; }
+.cd-label{ font-family:'Montserrat',sans-serif; font-weight:300; text-transform:uppercase; letter-spacing:.14em; font-size:.6rem; color:var(--tinta-2); margin-top:10px; }
+.cd-done{ font-size:1.6rem; font-style:italic; color:var(--lav-dark); margin-top:20px; }
+
+/* 6) DRESS CODE */
+.dress{ background:var(--ivory); }
+.dress .icon{ width:88px; margin:18px auto; opacity:.85; }
+.dress .icon svg path{ stroke:var(--sage-dark); stroke-width:1.1; fill:none; stroke-linejoin:round; }
+.dress-detail{ font-size:1.1rem; color:var(--tinta); }
+.dress-detail span{ color:var(--tinta-2); }
+
+/* 7) RSVP */
+.rsvp{ background:var(--ivory-2); }
+.rsvp .deadline{ font-weight:500; color:var(--tinta); }
+.rsvp .btn{ background:var(--lav); color:#fff; border-color:var(--lav); margin-top:24px; padding:16px 38px; }
+.rsvp .btn:hover{ background:var(--lav-dark); border-color:var(--lav-dark); }
+
+/* 8) LLUVIA DE SOBRES */
+.gift{ background:var(--ivory); }
+.gift .icon{ width:64px; margin:18px auto; opacity:.8; }
+.gift .icon svg path{ stroke:var(--lav-dark); stroke-width:1.2; fill:none; stroke-linejoin:round; }
+.gift p{ max-width:330px; margin:0 auto; color:var(--tinta-2); font-size:1.1rem; font-style:italic; }
+
+/* CIERRE */
+.closing{ background:var(--sage); color:var(--ivory); text-align:center; padding:54px 28px 64px; }
+.closing .heart{ color:#E7DEF1; margin:14px 0; font-size:1.2rem; }
+.closing .names{ font-size:2rem; letter-spacing:.18em; font-weight:300; }
+
+/* SCROLL REVEAL */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s ease; }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .scroll-hint{ animation:none; } html{ scroll-behavior:auto; }
+}
+@media (max-width:380px){
+  .monogram{ font-size:7rem; } .big-names{ font-size:2.4rem; }
+  .cd-num{ font-size:2.3rem; } .date-row .day{ font-size:3.4rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1) PORTADA -->
+  <section class="cover">
+    <div class="eyebrow" id="cover-greeting">Están cordialmente invitados</div>
+    <div class="monogram" id="monogram">J&nbsp;E</div>
+    <div class="wax" aria-hidden="true">
+      <svg viewBox="0 0 60 60"><path d="M30 50 V20"/><path d="M30 30 C22 28 18 22 18 16"/><path d="M30 30 C38 28 42 22 42 16"/><path d="M30 24 C24 23 21 19 21 14"/><path d="M30 24 C36 23 39 19 39 14"/><path d="M30 40 C24 39 21 35 21 31"/><path d="M30 40 C36 39 39 35 39 31"/></svg>
+    </div>
+    <div class="names serif-name" id="cover-names">José Ignacio<span class="amp">&amp;</span>Emily</div>
+    <div class="date-top" id="cover-date">01 · 08 · 2026</div>
+    <div class="scroll-hint">Desliza ↓</div>
+  </section>
+
+  <!-- 2) MÚSICA -->
+  <section class="music center reveal">
+    <div class="eyebrow">Dale play y escucha nuestra canción</div>
+    <div class="player">
+      <button class="play-btn" id="playBtn" aria-label="Reproducir nuestra canción">
+        <svg id="iconPlay" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="iconPause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+    </div>
+    <div class="song-title" id="songTitle">Nuestra canción</div>
+    <audio id="audio" loop preload="none"></audio>
+  </section>
+
+  <!-- 3) FAMILIAS + NOMBRES -->
+  <section class="intro center reveal">
+    <div class="eyebrow">Con la bendición de Dios</div>
+    <hr class="divider">
+    <div class="fam" id="fam-novio"></div>
+    <div class="fam" id="fam-novia"></div>
+    <p class="invite-line">tienen el honor de invitarles a la boda de sus hijos</p>
+    <div class="big-names serif-name" id="big-names"></div>
+    <p class="verse" id="verse"></p>
+  </section>
+
+  <!-- 4) CELEBRA CON NOSOTROS -->
+  <section class="event center reveal">
+    <div class="eyebrow">Celebra con nosotros</div>
+    <div class="date-row">
+      <div class="side" id="dr-dia">Sábado</div>
+      <div class="date-line"></div>
+      <div><div class="month" id="dr-mes">Agosto</div><div class="day" id="dr-day">01</div></div>
+      <div class="date-line"></div>
+      <div class="side" id="dr-hora">11:00 AM</div>
+    </div>
+    <hr class="divider">
+    <div class="venue-type">Ceremonia religiosa</div>
+    <div class="venue" id="iglesia-nombre"></div>
+    <a class="btn" id="btn-mapa-iglesia" target="_blank" rel="noopener">Ver mapa</a>
+    <div style="height:38px"></div>
+    <div class="venue-type" id="recepcion-type">Recepción</div>
+    <div class="venue" id="recepcion-nombre"></div>
+    <a class="btn" id="btn-mapa-recepcion" target="_blank" rel="noopener">Ver mapa</a>
+    <div class="note-sm" id="event-note"></div>
+  </section>
+
+  <!-- 5) CONTADOR -->
+  <section class="countdown center reveal">
+    <div class="eyebrow">¡Prepárate!</div>
+    <div class="cd-title serif-name">Nos vemos en</div>
+    <div class="cd-grid" id="cd-grid">
+      <div class="cd-cell"><div class="cd-num" id="cd-d">00</div><div class="cd-label">Días</div></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-cell"><div class="cd-num" id="cd-h">00</div><div class="cd-label">Horas</div></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-cell"><div class="cd-num" id="cd-m">00</div><div class="cd-label">Min</div></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-cell"><div class="cd-num" id="cd-s">00</div><div class="cd-label">Seg</div></div>
+    </div>
+    <div class="cd-done" id="cd-done" style="display:none">¡Hoy es el gran día! 🤍</div>
+  </section>
+
+  <!-- 6) DRESS CODE -->
+  <section class="dress center reveal">
+    <div class="eyebrow">Código de vestimenta</div>
+    <div class="cd-title serif-name" id="dress-title">Elegante</div>
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 90 70">
+        <path d="M22 8 l8 6 8-6 v54 h-16 z"/><path d="M30 14 v48"/>
+        <path d="M58 8 c6 4 10 12 10 20 v34 h-20 v-34 c0-8 4-16 10-20z"/><path d="M58 8 v54"/>
+      </svg>
+    </div>
+    <div class="dress-detail" id="dress-1"></div>
+    <div class="dress-detail" id="dress-2"></div>
+  </section>
+
+  <!-- 7) RSVP -->
+  <section class="rsvp center reveal">
+    <div class="eyebrow">Confirmación de asistencia</div>
+    <hr class="divider">
+    <p class="verse" style="font-style:normal">Por favor confírmanos tu asistencia hasta el <span class="deadline" id="rsvp-deadline"></span>.</p>
+    <a class="btn" id="btn-rsvp" target="_blank" rel="noopener">Confirmar asistencia</a>
+    <div class="note-sm" id="rsvp-cupos"></div>
+  </section>
+
+  <!-- 8) LLUVIA DE SOBRES -->
+  <section class="gift center reveal">
+    <div class="eyebrow">Lluvia de sobres</div>
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 64 48"><path d="M4 8 h56 v32 h-56 z"/><path d="M4 8 l28 20 28-20"/></svg>
+    </div>
+    <p>El mejor regalo que nos puedes dar es tu presencia. Si deseas obsequiarnos algo, será recibido con cariño en un sobre.</p>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="closing">
+    <div class="eyebrow" style="color:rgba(246,247,236,.7)">Te esperamos</div>
+    <div class="heart">♥</div>
+    <div class="names serif-name" id="closing-names">José Ignacio &amp; Emily</div>
+  </section>
+
+</div>
+
+<script>
+/* =================================================================
+   CONFIG — datos de José Ignacio & Emily
+   ================================================================= */
+const CONFIG = {
+  novio:"José Ignacio", novia:"Emily",
+  inicialNovio:"J", inicialNovia:"E",
+
+  padresNovioLabel:"Padres del novio", padresNovio:"Marcelo y Karina",
+  padresNoviaLabel:"Padres de la novia", padresNovia:"Francisco y Mónica",
+  fraseInvitacion:"tienen el honor de invitarles a la boda de sus hijos",
+
+  fecha:{ anio:2026, mes:8, dia:1, hora:11, min:0 },
+  diaSemana:"Sábado", horaTexto:"11:00 AM",
+
+  iglesiaNombre:"Capilla del Colegio San Felipe Neri",
+  iglesiaMapa:"https://maps.app.goo.gl/oxZc4UewiWEMESVTA",
+
+  recepcionTipo:"Recepción · después de la misa",
+  recepcionNombre:"Kampu Eventos",
+  recepcionMapa:"https://maps.app.goo.gl/8JBqk3utSgVjMvY28",
+  notaEvento:"Incluye estacionamiento",
+
+  cancionArchivo:"cancion.mp3",
+  cancionTitulo:"Nuestra canción",
+
+  versiculo:"El amor es paciente, es bondadoso… todo lo disculpa, todo lo cree, todo lo espera, todo lo soporta. Lo que Dios ha unido, que no lo separe nadie.",
+  versiculoCita:"1 Corintios 13:4–7",
+
+  dressTitulo:"Elegante formal",
+  dressEllas:"Vestido largo",
+  dressEllos:"Traje con corbata",
+
+  rsvpFecha:"15 de julio",
+  rsvpLink:"https://docs.google.com/forms/d/e/1FAIpQLSdanip2hengTgGzJacKgppWHMsmQ4Mx9D58VkocIx8GivvGeg/viewform",
+
+  tipos:{
+    solo:    { saludo:"Tienes una invitación personal", cupos:"Esta invitación es válida para 1 persona." },
+    pareja:  { saludo:"Te invitamos a ti y a tu pareja", cupos:"Esta invitación es válida para 2 personas." },
+    familia: { saludo:"Te invitamos a ti y a tu familia", cupos:"Esta invitación es válida para ti y tu familia." },
+  },
+};
+
+(function(){
+  const $ = id => document.getElementById(id);
+  const meses = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+  const params = new URLSearchParams(location.search);
+  const tipo = (params.get('tipo')||'solo').toLowerCase();
+  const nombre = params.get('nombre');
+  const t = CONFIG.tipos[tipo] || CONFIG.tipos.solo;
+
+  $('monogram').innerHTML = CONFIG.inicialNovio + '&nbsp;' + CONFIG.inicialNovia;
+  const parejaHTML = CONFIG.novio + '<span class="amp">&amp;</span>' + CONFIG.novia;
+  $('cover-names').innerHTML = parejaHTML;
+  $('big-names').innerHTML = parejaHTML;
+  $('closing-names').innerHTML = CONFIG.novio + ' &amp; ' + CONFIG.novia;
+
+  let saludo = t.saludo;
+  if (nombre) saludo = nombre + ', ' + saludo.charAt(0).toLowerCase() + saludo.slice(1);
+  $('cover-greeting').textContent = saludo;
+  $('rsvp-cupos').textContent = t.cupos;
+
+  $('fam-novio').innerHTML = '<span class="label">'+CONFIG.padresNovioLabel+'</span>'+CONFIG.padresNovio;
+  $('fam-novia').innerHTML = '<span class="label">'+CONFIG.padresNoviaLabel+'</span>'+CONFIG.padresNovia;
+  document.querySelector('.invite-line').textContent = CONFIG.fraseInvitacion;
+  $('verse').innerHTML = CONFIG.versiculo + '<cite>'+CONFIG.versiculoCita+'</cite>';
+
+  const f = CONFIG.fecha;
+  $('cover-date').textContent = String(f.dia).padStart(2,'0')+' · '+String(f.mes).padStart(2,'0')+' · '+f.anio;
+  $('dr-dia').textContent = CONFIG.diaSemana;
+  $('dr-day').textContent = String(f.dia).padStart(2,'0');
+  $('dr-mes').textContent = meses[f.mes];
+  $('dr-hora').textContent = CONFIG.horaTexto;
+
+  $('iglesia-nombre').textContent = CONFIG.iglesiaNombre;
+  $('btn-mapa-iglesia').href = CONFIG.iglesiaMapa;
+  $('recepcion-type').textContent = CONFIG.recepcionTipo;
+  $('recepcion-nombre').textContent = CONFIG.recepcionNombre;
+  $('btn-mapa-recepcion').href = CONFIG.recepcionMapa;
+  if (CONFIG.notaEvento) $('event-note').textContent = CONFIG.notaEvento; else $('event-note').style.display='none';
+
+  $('dress-title').textContent = CONFIG.dressTitulo;
+  $('dress-1').innerHTML = '<span>Ellas:</span> '+CONFIG.dressEllas;
+  $('dress-2').innerHTML = '<span>Ellos:</span> '+CONFIG.dressEllos;
+
+  $('rsvp-deadline').textContent = CONFIG.rsvpFecha;
+  $('btn-rsvp').href = CONFIG.rsvpLink;
+
+  const audio = $('audio'), playBtn = $('playBtn');
+  $('songTitle').textContent = CONFIG.cancionTitulo;
+  if (CONFIG.cancionArchivo){
+    audio.src = CONFIG.cancionArchivo;
+    playBtn.addEventListener('click', ()=>{
+      if (audio.paused){ audio.play(); playBtn.classList.add('playing'); $('iconPlay').style.display='none'; $('iconPause').style.display='block'; }
+      else { audio.pause(); playBtn.classList.remove('playing'); $('iconPlay').style.display='block'; $('iconPause').style.display='none'; }
+    });
+  } else { playBtn.style.opacity=.45; playBtn.style.cursor='default'; }
+
+  const target = new Date(f.anio, f.mes-1, f.dia, f.hora, f.min, 0).getTime();
+  function tick(){
+    const diff = target - Date.now();
+    if (diff<=0){ $('cd-grid').style.display='none'; $('cd-done').style.display='block'; document.querySelector('.cd-title').textContent='¡Llegó el día!'; clearInterval(timer); return; }
+    $('cd-d').textContent = Math.floor(diff/86400000);
+    $('cd-h').textContent = String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+    $('cd-m').textContent = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+    $('cd-s').textContent = String(Math.floor(diff%60000/1000)).padStart(2,'0');
+  }
+  tick(); const timer = setInterval(tick,1000);
+
+  const io = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
