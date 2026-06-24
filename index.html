@@ -59,11 +59,15 @@ section{ padding:64px 28px; position:relative; }
 }
 .cover .eyebrow{ color:rgba(246,247,236,.78); }
 .monogram{
-  font-family:'Cormorant Garamond', serif; font-weight:300;
-  font-size:8.5rem; line-height:.9; letter-spacing:-.04em;
-  color:#EDF0E2;
-  text-shadow:0 1px 0 rgba(255,255,255,.30), 0 -1px 0 rgba(0,0,0,.16);
+  font-family:'Cormorant Garamond', serif; font-weight:500;
+  font-size:8.8rem; line-height:.9; letter-spacing:.02em;
+  color:#F4F6EC;
+  text-shadow:0 2px 1px rgba(255,255,255,.35), 0 -1px 0 rgba(0,0,0,.20), 0 6px 16px rgba(0,0,0,.18);
   margin-bottom:6px;
+}
+.monogram .y{
+  font-size:.34em; font-style:italic; font-weight:400;
+  vertical-align:.32em; margin:0 .04em; color:#E2D7F0;
 }
 .wax{
   width:96px; height:96px; border-radius:50%; margin:30px auto 0;
@@ -182,7 +186,7 @@ section{ padding:64px 28px; position:relative; }
   <!-- 1) PORTADA -->
   <section class="cover">
     <div class="eyebrow" id="cover-greeting">Están cordialmente invitados</div>
-    <div class="monogram" id="monogram">J&nbsp;E</div>
+    <div class="monogram" id="monogram">J<span class="y">y</span>E</div>
     <div class="wax" aria-hidden="true">
       <svg viewBox="0 0 60 60"><path d="M30 50 V20"/><path d="M30 30 C22 28 18 22 18 16"/><path d="M30 30 C38 28 42 22 42 16"/><path d="M30 24 C24 23 21 19 21 14"/><path d="M30 24 C36 23 39 19 39 14"/><path d="M30 40 C24 39 21 35 21 31"/><path d="M30 40 C36 39 39 35 39 31"/></svg>
     </div>
@@ -281,13 +285,13 @@ section{ padding:64px 28px; position:relative; }
     <div class="icon" aria-hidden="true">
       <svg viewBox="0 0 64 48"><path d="M4 8 h56 v32 h-56 z"/><path d="M4 8 l28 20 28-20"/></svg>
     </div>
-    <p>El mejor regalo que nos puedes dar es tu presencia. Si deseas obsequiarnos algo, será recibido con cariño en un sobre.</p>
+    <p>Para arrancar esta nueva etapa juntos, el regalo perfecto cabe en un sobre 💌</p>
   </section>
 
   <!-- CIERRE -->
   <section class="closing">
     <div class="eyebrow" style="color:rgba(246,247,236,.7)">Te esperamos</div>
-    <div class="heart">♥</div>
+    <div class="heart"><svg viewBox="0 0 32 29" width="26" height="24" aria-hidden="true"><path d="M16 28C16 28 2 19.5 2 9.5C2 4.8 5.8 1 10.5 1C13.2 1 15.3 2.6 16 4.3C16.7 2.6 18.8 1 21.5 1C26.2 1 30 4.8 30 9.5C30 19.5 16 28 16 28Z" fill="#FFFFFF"/></svg></div>
     <div class="names serif-name" id="closing-names">José Ignacio &amp; Emily</div>
   </section>
 
@@ -301,14 +305,14 @@ const CONFIG = {
   novio:"José Ignacio", novia:"Emily",
   inicialNovio:"J", inicialNovia:"E",
 
-  padresNovioLabel:"Padres del novio", padresNovio:"Marcelo y Karina",
-  padresNoviaLabel:"Padres de la novia", padresNovia:"Francisco y Mónica",
+  padresNovioLabel:"Padres del novio", padresNovio:"Marcelo Pumagualli y Karina Silva",
+  padresNoviaLabel:"Padres de la novia", padresNovia:"Francisco Romero y Mónica Silva",
   fraseInvitacion:"tienen el honor de invitarles a la boda de sus hijos",
 
   fecha:{ anio:2026, mes:8, dia:1, hora:11, min:0 },
   diaSemana:"Sábado", horaTexto:"11:00 AM",
 
-  iglesiaNombre:"Capilla del Colegio San Felipe Neri",
+  iglesiaNombre:"Capilla del Sagrario del Colegio San Felipe Neri",
   iglesiaMapa:"https://maps.app.goo.gl/oxZc4UewiWEMESVTA",
 
   recepcionTipo:"Recepción · después de la misa",
@@ -322,7 +326,7 @@ const CONFIG = {
   versiculo:"El amor es paciente, es bondadoso… todo lo disculpa, todo lo cree, todo lo espera, todo lo soporta. Lo que Dios ha unido, que no lo separe nadie.",
   versiculoCita:"1 Corintios 13:4–7",
 
-  dressTitulo:"Elegante formal",
+  dressTitulo:"Formal",
   dressEllas:"Vestido largo",
   dressEllos:"Traje con corbata",
 
@@ -344,7 +348,7 @@ const CONFIG = {
   const nombre = params.get('nombre');
   const t = CONFIG.tipos[tipo] || CONFIG.tipos.solo;
 
-  $('monogram').innerHTML = CONFIG.inicialNovio + '&nbsp;' + CONFIG.inicialNovia;
+  $('monogram').innerHTML = CONFIG.inicialNovio + '<span class="y">y</span>' + CONFIG.inicialNovia;
   const parejaHTML = CONFIG.novio + '<span class="amp">&amp;</span>' + CONFIG.novia;
   $('cover-names').innerHTML = parejaHTML;
   $('big-names').innerHTML = parejaHTML;
