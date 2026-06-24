@@ -371,9 +371,12 @@ const CONFIG = {
   rsvpLink:"https://docs.google.com/forms/d/e/1FAIpQLSdanip2hengTgGzJacKgppWHMsmQ4Mx9D58VkocIx8GivvGeg/viewform",
 
   tipos:{
-    solo:    { saludo:"Tienes una invitación personal", cupos:"Esta invitación es válida para 1 persona." },
-    pareja:  { saludo:"Te invitamos a ti y a tu pareja", cupos:"Esta invitación es válida para 2 personas." },
-    familia: { saludo:"Te invitamos a ti y a tu familia", cupos:"Esta invitación es válida para ti y tu familia." },
+    solo:    { saludo:"Tienes una invitación personal", cupos:"Esta invitación es válida para 1 persona.",
+               link:"https://docs.google.com/forms/d/e/1FAIpQLSdanip2hengTgGzJacKgppWHMsmQ4Mx9D58VkocIx8GivvGeg/viewform" },
+    pareja:  { saludo:"Te invitamos a ti y a tu pareja", cupos:"Esta invitación es válida para 2 personas.",
+               link:"https://docs.google.com/forms/d/e/1FAIpQLSesEXOWu72cnSKxL3y5EI2fXo9jG_07zbUxiRLvjonWKAL2_Q/viewform" },
+    familia: { saludo:"Te invitamos a ti y a tu familia", cupos:"Esta invitación es válida para ti y tu familia.",
+               link:"https://docs.google.com/forms/d/e/1FAIpQLScSexqt2w2ljVZBdkPZxg9SQ5IXPJ9ZV4CW9XOTHL3bKuUvwA/viewform" },
   },
 };
 
@@ -422,7 +425,7 @@ const ENV_PHOTO = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBA
   $('dress-2').innerHTML = '<span>Ellos:</span> '+CONFIG.dressEllos;
 
   $('rsvp-deadline').textContent = CONFIG.rsvpFecha;
-  $('btn-rsvp').href = CONFIG.rsvpLink;
+  $('btn-rsvp').href = t.link || CONFIG.rsvpLink;
 
   const audio = $('audio'), playBtn = $('playBtn');
   $('songTitle').textContent = CONFIG.cancionTitulo;
